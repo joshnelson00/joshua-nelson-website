@@ -8,14 +8,11 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full animate-float blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full animate-float blur-3xl" style={{ animationDelay: '2s' }}></div>
-      </div>
+    <section id="home" className="min-h-screen flex items-center justify-center relative">
+      {/* Semi-transparent overlay without blur */}
+      <div className="absolute inset-0 bg-black/20 z-10"></div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-20">
         <div className="text-center animate-fadeIn">
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent animate-slideUp">

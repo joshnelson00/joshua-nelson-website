@@ -60,10 +60,10 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-background">
+    <section id="projects" className="py-16 md:py-24 bg-[hsl(220,27%,12%)]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -74,7 +74,7 @@ const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <Card key={index} className="group bg-card/50 border-border/50 hover:bg-card/70 transition-smooth shadow-card hover:shadow-glow overflow-hidden">
-              <div className="aspect-video bg-gradient-secondary relative overflow-hidden">
+              <div className="aspect-video bg-gradient-primary relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-primary opacity-20"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
