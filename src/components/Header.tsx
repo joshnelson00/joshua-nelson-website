@@ -70,13 +70,14 @@ const Header = () => {
             {/* Logo */}
             <button
               onClick={() => scrollToSection("#home")}
-              className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform"
+              className="text-2xl font-black bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform tracking-tight"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
-              JN
+              Joshua Nelson
             </button>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-1">
+            <nav className="hidden md:flex items-center justify-center space-x-2">
               {navigation.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeSection === item.href.substring(1);
@@ -85,7 +86,7 @@ const Header = () => {
                   <button
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
+                    className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-200 ${
                       isActive
                         ? "bg-primary/10 text-primary shadow-accent"
                         : "text-muted-foreground hover:text-primary hover:bg-primary/5"

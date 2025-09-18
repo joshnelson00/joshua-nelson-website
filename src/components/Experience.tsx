@@ -63,7 +63,7 @@ const Experience = () => {
               <CardContent className="p-8">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                   <div className="lg:flex-1">
-                    <h3 className="text-2xl font-bold text-primary mb-2 group-hover:text-accent transition-smooth">
+                    <h3 className="text-2xl font-bold text-primary mb-2 group-hover:text-purple-400 transition-smooth">
                       {exp.title}
                     </h3>
                     <p className="text-xl font-semibold text-foreground mb-2">
