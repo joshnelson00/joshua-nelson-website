@@ -70,7 +70,7 @@ const Header = () => {
             {/* Logo */}
             <button
               onClick={() => scrollToSection("#home")}
-              className="text-2xl font-black bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform tracking-tight"
+              className="text-2xl font-black bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transform-gpu will-change-transform transition-transform duration-300 ease-out tracking-tight"
               style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
               Joshua Nelson
