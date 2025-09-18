@@ -90,8 +90,8 @@ const Experience = () => {
                   <h4 className="text-lg font-semibold mb-3 text-primary">Key Achievements:</h4>
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-accent mt-2">•</span>
+                      <li key={idx} className="flex items-center gap-2">
+                        <span className="text-accent">•</span>
                         <span className="text-muted-foreground">{achievement}</span>
                       </li>
                     ))}

@@ -101,8 +101,8 @@ const Projects = () => {
                   <h4 className="text-sm font-semibold text-primary mb-2">Key Features:</h4>
                   <ul className="space-y-1">
                     {project.highlights.map((highlight, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-accent mt-1">•</span>
+                      <li key={idx} className="flex items-center gap-2 text-sm">
+                        <span className="text-accent">•</span>
                         <span className="text-muted-foreground">{highlight}</span>
                       </li>
                     ))}

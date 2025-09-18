@@ -122,8 +122,8 @@ const Education = () => {
                     <h4 className="text-lg font-semibold mb-3 text-primary">Relevant Coursework:</h4>
                     <ul className="space-y-2">
                       {edu.coursework.map((course, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className="text-accent mt-2">•</span>
+                        <li key={idx} className="flex items-center gap-2">
+                          <span className="text-accent">•</span>
                           <span className="text-muted-foreground">{course}</span>
                         </li>
                       ))}
@@ -134,8 +134,8 @@ const Education = () => {
                     <h4 className="text-lg font-semibold mb-3 text-primary">Achievements:</h4>
                     <ul className="space-y-2">
                       {edu.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <Award className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                        <li key={idx} className="flex items-center gap-2">
+                          <Award className="h-4 w-4 text-accent flex-shrink-0" />
                           <span className="text-muted-foreground">{achievement}</span>
                         </li>
                       ))}
