@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
@@ -7,14 +8,17 @@ import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
-      <Hero />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Education />
-      <Contact />
-    </main>
+    <div className="min-h-screen">
+      <Header />
+      <main>
+        <Hero />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Education />
+        <Contact />
+      </main>
+    </div>
   );
 };
 
