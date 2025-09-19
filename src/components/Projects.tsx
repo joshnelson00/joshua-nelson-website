@@ -99,7 +99,7 @@ const Projects = () => {
           >
             <CarouselContent className="-ml-1 md:-ml-2">
               {projects.map((project, index) => (
-                <CarouselItem key={index} className="pl-1 md:pl-2 basis-full md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="pl-1 md:pl-2 basis-full md:basis-[60%] lg:basis-[45%]">
                   <Card className="group bg-card/50 border-border/50 hover:bg-card/70 transition-smooth shadow-card hover:shadow-glow overflow-hidden h-full">
                     <div className="aspect-video relative overflow-hidden bg-muted/20" style={{ aspectRatio: '16/10' }}>
                       <img 
