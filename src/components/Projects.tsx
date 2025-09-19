@@ -7,57 +7,43 @@ import Autoplay from "embla-carousel-autoplay";
 
 const projects = [
   {
-    title: "CloudOps Dashboard",
-    description: "A comprehensive monitoring and management platform for multi-cloud infrastructure with real-time metrics, alerting, and automated scaling capabilities.",
+    title: "Full Stack Web App",
+    description: "A full functional RAID attribute manager for project managers looking to stay organized and efficient.",
     image: "/images/WebAppSS.png",
-    technologies: ["React", "TypeScript", "Node.js", "AWS", "Docker", "Prometheus"],
-    github: "https://github.com",
-    live: "https://demo.com",
-    highlights: [
-      "Real-time infrastructure monitoring",
-      "Automated scaling and alerting",
-      "Multi-cloud support (AWS, GCP, Azure)"
-    ]
-  },
-  {
-    title: "DevOps Toolkit",
-    description: "Open-source collection of DevOps tools and scripts for automated deployment, monitoring, and infrastructure management across different environments.",
-    image: "/api/placeholder/600/400", 
-    technologies: ["Python", "Bash", "Ansible", "Terraform", "Kubernetes", "Git"],
-    github: "https://github.com",
+    technologies: ["Python", "Django", "Docker", "AWS"],
+    github: "https://github.com/joshnelson00/raidlogix-app",
     live: null,
     highlights: [
-      "Infrastructure as Code templates", 
-      "Automated CI/CD pipeline scripts",
-      "Container orchestration utilities"
+      "Gathered user stories and requirements", 
+      "Autoscaling via AWS ELB (up to 1000 concurrent users)",
     ]
   },
   {
-    title: "Microservices Platform",
-    description: "Scalable microservices architecture with service mesh, distributed tracing, and comprehensive logging for enterprise-grade applications.",
-    image: "/api/placeholder/600/400",
-    technologies: ["Java", "Spring Boot", "Kubernetes", "Istio", "PostgreSQL", "Redis"],
-    github: "https://github.com", 
-    live: "https://demo.com",
+    title: "AI Leetcode Discord Bot",
+    description: "Discord bot for servers that serve real leetcode questions and generate new ones on request.",
+    image: "/images/DiscordBotSS.png", 
+    technologies: ["Python", "Leetcode API", "Redis", "Ollama"],
+    github: "https://github.com/joshnelson00/dsa-discord-bot",
+    live: null,
     highlights: [
-      "Service mesh implementation",
-      "Distributed tracing with Jaeger", 
-      "Auto-scaling and load balancing"
+      "Utilized Leetcode API to fetch real questions", 
+      "Generated new questions using Kaggle Leetcode Question Dataset",
+      "Utilized Redis for caching and rate limiting"
     ]
   },
   {
-    title: "AI-Powered Log Analytics",
-    description: "Machine learning platform for analyzing application logs, detecting anomalies, and predicting potential system failures before they occur.",
-    image: "/api/placeholder/600/400",
-    technologies: ["Python", "TensorFlow", "Elasticsearch", "Kibana", "Docker", "FastAPI"],
-    github: "https://github.com",
-    live: "https://demo.com", 
+    title: "AI LinkedIn Job Scout",
+    description: "Job and resumé comparison tool for job seekers looking to find the best job opportunities aligned with their resumé.",
+    image: "/images/ResumeScoutSS.png",
+    technologies: ["Golang", "Redis", "Ollama", "Scrapingdog API"],
+    github: "https://github.com/joshnelson00/linkedin-job-scout", 
+    live: null,
     highlights: [
-      "Anomaly detection algorithms",
-      "Predictive failure analysis",
-      "Real-time log processing"
+      "Concurrent job description processing with Goroutines",
+      "Implemented 3rd party API to address LinkedIn Scraping policies", 
+      "Implemented CRON job to send SMTP email with relevant job/resumé matches"
     ]
-  }
+  },
 ];
 
 const Projects = () => {
@@ -137,10 +123,10 @@ const Projects = () => {
                         {project.description}
                       </p>
                       
-                      <div>
+                      <div className="min-h-[4.5rem]">
                         <h4 className="text-xs font-semibold text-primary mb-1">Key Features:</h4>
                         <ul className="space-y-0.5">
-                          {project.highlights.slice(0, 2).map((highlight, idx) => (
+                          {project.highlights.map((highlight, idx) => (
                             <li key={idx} className="flex items-center gap-1 text-xs">
                               <span className="text-accent text-xs">•</span>
                               <span className="text-muted-foreground">{highlight}</span>
@@ -183,8 +169,8 @@ const Projects = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-2 h-8 w-8 bg-card/80 border-primary/20 hover:bg-primary/10" />
-            <CarouselNext className="right-2 h-8 w-8 bg-card/80 border-primary/20 hover:bg-primary/10" />
+            <CarouselPrevious className="left-2 md:left-4 h-10 w-10 md:h-12 md:w-12 bg-card/90 border-2 border-primary/40 hover:bg-primary/20 hover:border-primary/60 hover:scale-110 transition-all duration-200 shadow-lg shadow-primary/10 hover:shadow-primary/20 z-20" />
+            <CarouselNext className="right-2 md:right-4 h-10 w-10 md:h-12 md:w-12 bg-card/90 border-2 border-primary/40 hover:bg-primary/20 hover:border-primary/60 hover:scale-110 transition-all duration-200 shadow-lg shadow-primary/10 hover:shadow-primary/20 z-20" />
           </Carousel>
         </div>
       </div>

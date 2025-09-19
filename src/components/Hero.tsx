@@ -31,7 +31,7 @@ const Hero = () => {
               <Mail className="mr-2 h-4 w-4" />
               Get In Touch
             </Button>
-            <Button asChild variant="outline" size="lg" className="bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-2px] hover:shadow-lg transition-all duration-300 ease-in-out">
+            <Button asChild variant="outline" size="lg" className="bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-in-out">
               <a href="#projects" className="flex items-center">
                 <Github className="mr-2 h-4 w-4" />
                 View Projects
