@@ -31,9 +31,8 @@ const Hero = () => {
               <Mail className="mr-2 h-4 w-4" />
               Get In Touch
             </Button>
-            <Button variant="outline" size="lg" className="border-primary/50 hover:bg-gradient-hero hover:-translate-y-1 transition-all duration-300 ease-in-out">
-              <Github className="mr-2 h-4 w-4" />
-              View Projects
+            <Button asChild variant="outline" size="lg" className="bg-black border-2 border-white text-white hover:bg-black hover:text-white hover:border-white hover:translate-y-[-2px] hover:shadow-lg transition-all duration-200">
+              <a href="#projects">View Projects</a>
             </Button>
           </div>
           

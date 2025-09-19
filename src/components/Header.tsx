@@ -70,10 +70,11 @@ const Header = () => {
             {/* Logo */}
             <button
               onClick={() => scrollToSection("#home")}
-              className="text-2xl font-black bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transform-gpu will-change-transform transition-transform duration-300 ease-out tracking-tight"
-              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+              className="text-2xl font-bold hover:scale-105 transform-gpu will-change-transform transition-transform duration-300 ease-out tracking-tight"
             >
-              Joshua Nelson
+              <span className="font-mono bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                &lt;Joshua<span className="text-accent">.</span>Nelson<span className="text-primary">/&gt;</span>
+              </span>
             </button>
 
             {/* Desktop Navigation */}
