@@ -62,11 +62,55 @@ This project is built with:
 
 ## How can I deploy this project?
 
+### Option 1: Deploy via Lovable
 Simply open [Lovable](https://lovable.dev/projects/9145eaf2-6010-4a5a-ad5e-6ad5bbfbd95a) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+### Option 2: Deploy to GitHub Pages
+This project is configured for easy deployment to GitHub Pages:
 
-Yes, you can!
+#### Prerequisites
+- Node.js & npm installed
+- Git repository set up on GitHub
+- `gh-pages` package installed (already included in devDependencies)
+
+#### Deployment Steps
+
+1. **Build the project**
+   ```bash
+   npm run build:gh-pages
+   ```
+
+2. **Deploy to GitHub Pages**
+   ```bash
+   npm run deploy
+   ```
+   This will automatically build the project and deploy it to the `gh-pages` branch.
+
+3. **Configure GitHub Pages**
+   - Go to your repository on GitHub
+   - Click on "Settings" > "Pages"
+   - Under "Source", select "Deploy from a branch"
+   - Choose the `gh-pages` branch and `/ (root)` folder
+   - Click "Save"
+
+4. **Access your site**
+   Your site will be available at: `https://<your-username>.github.io/<your-repo-name>/`
+
+#### Custom Domain
+
+To connect a custom domain to your GitHub Pages site:
+
+1. **Configure GitHub Pages**
+   - Go to repository Settings > Pages
+   - Under "Custom domain", enter your domain
+   - Check "Enforce HTTPS"
+
+2. **Configure DNS**
+   Add a CNAME record pointing to `<your-username>.github.io`
+
+### Option 3: Lovable Custom Domain
+
+Yes, you can also connect a custom domain via Lovable!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
