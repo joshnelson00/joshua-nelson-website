@@ -75,8 +75,8 @@ const Projects = () => {
 
         <div className="relative max-w-5xl mx-auto">
           {/* Enhanced vignette/shader effects */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[hsl(220,27%,12%)] via-[hsl(220,27%,12%)] to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[hsl(220,27%,12%)] via-[hsl(220,27%,12%)] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[hsl(220,31%,6%)] via-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[hsl(220,31%,6%)] via-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
           
           {/* Additional inner vignette for shader effect */}
           <div className="absolute left-8 top-0 bottom-0 w-20 bg-gradient-to-r from-transparent via-black/10 to-transparent z-10 pointer-events-none"></div>
@@ -85,21 +85,21 @@ const Projects = () => {
           <Carousel 
             plugins={[
               Autoplay({
-                delay: 4000,
+                delay: 3000,
                 stopOnInteraction: false,
                 stopOnMouseEnter: true,
                 stopOnFocusIn: false,
               }),
             ]}
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             className="w-full"
           >
             <CarouselContent className="-ml-1 md:-ml-2">
               {projects.map((project, index) => (
-                <CarouselItem key={index} className="pl-1 md:pl-2 basis-full md:basis-[60%] lg:basis-[45%]">
+                <CarouselItem key={index} className="pl-1 md:pl-2 basis-full md:basis-[70%] lg:basis-[60%]">
                   <Card className="group bg-card/30 border-2 border-primary/30 hover:bg-card/50 hover:border-primary/50 transition-smooth shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 overflow-hidden h-full">
                     <div className="aspect-video relative overflow-hidden bg-muted/20" style={{ aspectRatio: '16/10' }}>
                       <img 
@@ -163,15 +163,15 @@ const Projects = () => {
                       </div>
                       
                       <div className="flex gap-2 pt-2">
-                        <Button variant="outline" size="sm" asChild className="flex-1 text-xs h-8 border-primary/20 hover:bg-primary/10">
-                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" size="sm" asChild className="flex-1 text-xs h-8 bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-2px] transition-all duration-300 ease-in-out">
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                             <Github className="mr-1 h-3 w-3" />
                             Code
                           </a>
                         </Button>
                         {project.live && (
-                          <Button size="sm" asChild className="flex-1 text-xs h-8 bg-gradient-primary hover:shadow-accent">
-                            <a href={project.live} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" asChild className="flex-1 text-xs h-8 bg-gradient-primary hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                            <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                               <ExternalLink className="mr-1 h-3 w-3" />
                               Demo
                             </a>

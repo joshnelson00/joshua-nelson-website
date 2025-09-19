@@ -29,9 +29,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                      <a href="mailto:joshua.nelson@email.com" 
+                      <a href="mailto:joshuaknelson1202@icloud.com" 
                          className="text-muted-foreground hover:text-primary transition-smooth">
-                        joshua.nelson@email.com
+                        joshuaknelson1202@icloud.com
                       </a>
                     </div>
                   </div>
@@ -42,9 +42,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                      <a href="tel:+1-555-123-4567" 
+                      <a href="tel:+1-785-851-6299" 
                          className="text-muted-foreground hover:text-primary transition-smooth">
-                        +1 (555) 123-4567
+                        +1 (785)-851-6299
                       </a>
                     </div>
                   </div>
@@ -55,7 +55,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Location</h4>
-                      <p className="text-muted-foreground">San Francisco, CA</p>
+                      <p className="text-muted-foreground">Kansas City, MO</p>
                       <p className="text-sm text-muted-foreground mt-1">Open to remote opportunities</p>
                     </div>
                   </div>
@@ -64,13 +64,13 @@ const Contact = () => {
                 <div className="mt-8 pt-8 border-t border-border/50">
                   <h4 className="font-semibold text-foreground mb-4">Connect Online</h4>
                   <div className="flex gap-4">
-                    <a href="https://github.com/joshuanelson" 
+                    <a href="https://github.com/joshnelson00" 
                        target="_blank" 
                        rel="noopener noreferrer"
                        className="p-3 bg-secondary/50 rounded-lg hover:bg-primary/10 transition-smooth group">
                       <Github className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
                     </a>
-                    <a href="https://linkedin.com/in/joshuanelson" 
+                    <a href="https://linkedin.com/in/joshnelson00" 
                        target="_blank" 
                        rel="noopener noreferrer"
                        className="p-3 bg-secondary/50 rounded-lg hover:bg-primary/10 transition-smooth group">
@@ -115,16 +115,18 @@ const Contact = () => {
                   </div>
                   
                   <div className="space-y-3">
-                    <Button asChild className="w-full bg-gradient-primary hover:shadow-glow transition-smooth">
-                      <a href="mailto:joshua.nelson@email.com?subject=Let's work together!">
+                    <Button asChild className="w-full bg-gradient-primary hover:shadow-glow hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                      <a href="mailto:joshuaknelson1202@icloud.com?subject=Let's work together!" className="flex items-center justify-center">
                         <Mail className="mr-2 h-4 w-4" />
                         Send Message
                       </a>
                     </Button>
                     
-                    <Button variant="outline" className="w-full border-primary/20 hover:bg-primary/10">
-                      <Download className="mr-2 h-4 w-4" />
-                      Download Resume
+                    <Button asChild variant="outline" className="w-full bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-2px] hover:shadow-lg transition-all duration-300 ease-in-out">
+                      <a href="../public/Joshua_Nelson_Resume.pdf" download="Joshua_Nelson_Resume.pdf" className="flex items-center justify-center">
+                        <Download className="mr-2 h-4 w-4" />
+                        Download Resume
+                      </a>
                     </Button>
                   </div>
                 </div>

@@ -78,33 +78,35 @@ const Header = () => {
             </button>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center ml-auto space-x-1">
-              {navigation.map((item) => {
-                const Icon = item.icon;
-                const isActive = activeSection === item.href.substring(1);
-                
-                return (
-                  <button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href)}
-                    className={`group relative flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 ${
-                      isActive
-                        ? "bg-gradient-to-r from-primary/20 to-accent/20 text-primary shadow-lg backdrop-blur-sm border border-primary/30"
-                        : "text-muted-foreground hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 hover:backdrop-blur-sm hover:border hover:border-primary/20"
-                    }`}
-                  >
-                    <Icon className={`h-4 w-4 transition-all duration-300 ${
-                      isActive ? "text-primary" : "group-hover:text-accent"
-                    }`} />
-                    <span className="relative">
-                      {item.name}
-                      {isActive && (
-                        <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-                      )}
-                    </span>
-                  </button>
-                );
-              })}
+            <nav className="hidden md:flex items-center justify-end flex-1">
+              <div className="flex items-center space-x-1">
+                {navigation.map((item) => {
+                  const Icon = item.icon;
+                  const isActive = activeSection === item.href.substring(1);
+                  
+                  return (
+                    <button
+                      key={item.name}
+                      onClick={() => scrollToSection(item.href)}
+                      className={`group relative flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border border-transparent ${
+                        isActive
+                          ? "bg-gradient-to-r from-primary/20 to-accent/20 text-primary shadow-lg backdrop-blur-sm border-primary/30"
+                          : "text-muted-foreground hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 hover:backdrop-blur-sm hover:border-primary/20"
+                      }`}
+                    >
+                      <Icon className={`h-4 w-4 transition-all duration-300 ${
+                        isActive ? "text-primary" : "group-hover:text-accent"
+                      }`} />
+                      <span className="relative">
+                        {item.name}
+                        {isActive && (
+                          <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                        )}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
             </nav>
 
             {/* Mobile menu button */}
