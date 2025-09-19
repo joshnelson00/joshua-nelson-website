@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone, Github, Linkedin, Download } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-gradient-secondary">
+    <section id="contact" className="py-20" style={{ backgroundColor: '#0b0e15' }}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
@@ -18,7 +18,7 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Contact Information */}
-            <Card className="bg-card/50 border-border/50 shadow-card">
+            <Card className="bg-card/30 border-2 border-primary/30 hover:bg-card/50 hover:border-primary/50 transition-smooth shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6 text-primary">Get In Touch</h3>
                 
@@ -82,7 +82,7 @@ const Contact = () => {
             </Card>
 
             {/* Call to Action */}
-            <Card className="bg-card/50 border-border/50 shadow-card">
+            <Card className="bg-card/30 border-2 border-accent/30 hover:bg-card/50 hover:border-accent/50 transition-smooth shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6 text-primary">Ready to Work Together?</h3>
                 

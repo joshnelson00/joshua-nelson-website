@@ -29,7 +29,7 @@ const additionalCertifications = [
 
 const Education = () => {
   return (
-    <section id="education" className="py-20 bg-background">
+    <section id="education" className="py-20" style={{ backgroundColor: '#0b0e15' }}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
@@ -43,7 +43,7 @@ const Education = () => {
         {/* Education Section */}
         <div className="space-y-8 max-w-5xl mx-auto mb-16">
           {education.map((edu, index) => (
-            <Card key={index} className="bg-card/50 border-border/50 hover:bg-card/70 transition-smooth shadow-card hover:shadow-glow group">
+            <Card key={index} className="bg-card/30 border-2 border-primary/30 hover:bg-card/50 hover:border-primary/50 transition-smooth shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 group">
               <CardContent className="p-8">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                   <div className="lg:flex-1">

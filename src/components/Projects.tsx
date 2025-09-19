@@ -62,7 +62,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-12 md:py-16 bg-[hsl(220,27%,12%)]">
+    <section id="projects" className="py-12 md:py-16" style={{ backgroundColor: '#0b0e15' }}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-3 bg-gradient-primary bg-clip-text text-transparent">
@@ -100,7 +100,7 @@ const Projects = () => {
             <CarouselContent className="-ml-1 md:-ml-2">
               {projects.map((project, index) => (
                 <CarouselItem key={index} className="pl-1 md:pl-2 basis-full md:basis-[60%] lg:basis-[45%]">
-                  <Card className="group bg-card/50 border-border/50 hover:bg-card/70 transition-smooth shadow-card hover:shadow-glow overflow-hidden h-full">
+                  <Card className="group bg-card/30 border-2 border-primary/30 hover:bg-card/50 hover:border-primary/50 transition-smooth shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 overflow-hidden h-full">
                     <div className="aspect-video relative overflow-hidden bg-muted/20" style={{ aspectRatio: '16/10' }}>
                       <img 
                         src={project.image} 
