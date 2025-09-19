@@ -86,7 +86,7 @@ export const hyperspeedPresets = {
     carLightsRadius: [0.05, 0.14] as [number, number],
     carWidthPercentage: [0.3, 0.5] as [number, number],
     carShiftX: [-0.8, 0.8] as [number, number],
-    carFloorSeparation: [0, 5] as [number, number],
+    carFloorSeparation: [0, 2] as [number, number],
     colors: {
       roadColor: 0x080808,
       islandColor: 0x0a0a0a,

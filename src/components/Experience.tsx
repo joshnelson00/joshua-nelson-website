@@ -4,42 +4,45 @@ import { Calendar, MapPin } from "lucide-react";
 
 const experiences = [
   {
-    title: "Senior DevOps Engineer",
-    company: "TechCorp Solutions",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
-    description: "Lead DevOps initiatives for microservices architecture, implementing CI/CD pipelines and managing cloud infrastructure at scale.",
-    technologies: ["AWS", "Kubernetes", "Docker", "Jenkins", "Terraform", "Python"],
+    title: "President",
+    company: "Canyon Artificial Intelligence Research",
+    location: "Phoenix, AZ",
+    period: "April 2025 - Present",
+    description:
+      "Oversaw organizational growth, research project launches, and strategic planning for a university AI research group.",
+    technologies: ["Leadership", "AI Research", "Strategic Planning", "Agile Workflows"],
     achievements: [
-      "Reduced deployment time by 80% through automated CI/CD pipelines",
-      "Managed infrastructure serving 1M+ daily active users",
-      "Led migration from monolith to microservices architecture"
+      "Facilitated monthly standups and coordinated workflows across multiple research projects",
+      "Led strategic planning driving a 135% membership increase (20 → 47 members)",
+      "Launched 5 new research project initiatives expanding exploration and technical learning opportunities"
     ]
   },
   {
-    title: "Full Stack Software Engineer",
-    company: "StartupXYZ",
-    location: "Austin, TX",
-    period: "2020 - 2022",
-    description: "Developed and maintained full-stack applications using modern technologies, collaborated with product teams to deliver user-centric solutions.",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Docker", "TypeScript"],
+    title: "Freelance Web Infrastructure Engineer",
+    company: "KCMusicStudio",
+    location: "Kansas City, MO",
+    period: "May 2025 - July 2025",
+    description:
+      "Led infrastructure upgrades and migrations for a live e-commerce platform and associated WordPress sites, ensuring stability, performance, and security.",
+    technologies: [ "Linux", "Backups", "Staging Environments", "PHP 8.2", "WordPress 6.6", "WooCommerce"],
     achievements: [
-      "Built scalable web applications handling 100k+ concurrent users",
-      "Implemented real-time features using WebSocket connections",
-      "Reduced API response time by 60% through optimization"
+      "Upgraded PHP 8.2 / WordPress 6.6 with <1 hour downtime and zero data loss for 100+ active users",
+      "Deployed staging environments across 3 WordPress sites, reducing production deployment issues by 90%",
+      "Implemented daily offsite backups with 30-day retention and tested restore procedures for 100% recovery success"
     ]
   },
   {
-    title: "Software Developer",
-    company: "Innovation Labs",
-    location: "Remote",
-    period: "2018 - 2020",
-    description: "Developed enterprise software solutions and maintained legacy systems while implementing modern development practices.",
-    technologies: ["Java", "Spring Boot", "MySQL", "Redis", "Git", "Linux"],
+    title: "Research Intern Project Lead",
+    company: "Canyon Artificial Intelligence Research",
+    location: "Phoenix, AZ",
+    period: "Oct 2024 - April 2025",
+    description:
+      "Led a team of engineers developing AI-powered object detection solutions and feasibility studies for edge deployment.",
+    technologies: ["YOLO v4", "ESP-32", "Python", "Agile", "Computer Vision"],
     achievements: [
-      "Modernized legacy codebase improving performance by 40%",
-      "Introduced automated testing increasing code coverage to 85%",
-      "Collaborated with cross-functional teams on product roadmap"
+      "Implemented YOLO v4 object detection to recognize hand gestures at 25 ft distance",
+      "Analyzed feasibility of object detection on ESP-32 with low-memory optimization",
+      "Led a cross-functional team of 4 engineers with bi-weekly standups and workflow optimization"
     ]
   }
 ];

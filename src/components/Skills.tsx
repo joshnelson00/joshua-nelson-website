@@ -1,66 +1,52 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Database, Cloud, Settings, Monitor, GitBranch } from "lucide-react";
+import { Code, Database, Cloud, Settings, Monitor, GitBranch, Layout } from "lucide-react";
 
 const skillCategories = [
   {
     icon: Code,
     title: "Programming Languages",
-    skills: ["JavaScript", "TypeScript", "Python", "Java", "Go", "Bash", "SQL"]
+    skills: ["Python", "Go", "Java", "Bash", "SQL", "C++"]
   },
   {
     icon: Database,
     title: "Databases & Storage",
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Elasticsearch", "DynamoDB"]
+    skills: ["PostgreSQL", "MySQL", "SQLite", "MongoDB", "Redis", "DynamoDB"]
   },
   {
     icon: Cloud,
     title: "Cloud Platforms",
-    skills: ["AWS", "Google Cloud", "Azure", "DigitalOcean", "Heroku", "Vercel"]
+    skills: ["AWS", "Azure", "Atlantic.net"]
   },
   {
     icon: Settings,
     title: "DevOps & Infrastructure",
-    skills: ["Docker", "Kubernetes", "Terraform", "Ansible", "Jenkins", "GitHub Actions"]
-  },
-  {
-    icon: Monitor,
-    title: "Monitoring & Observability",
-    skills: ["Prometheus", "Grafana", "DataDog", "New Relic", "ELK Stack", "Jaeger"]
+    skills: ["Docker", "GitHub Actions", "Kubernetes", "Jenkins", ]
   },
   {
     icon: GitBranch,
     title: "Development Tools",
-    skills: ["Git", "VS Code", "Linux", "Nginx", "Apache", "Postman"]
+    skills: ["Git", "VS Code", "Linux/Unix", "Nginx"]
+  },
+  {
+    icon: Layout,
+    title: "Frameworks",
+    skills: ["Django", "FastAPI", "Flask"]
   }
 ];
 
-const frameworks = [
-  "React", "Node.js", "Express", "Next.js", "Spring Boot", "FastAPI", 
-  "Django", "Vue.js", "Tailwind CSS", "Bootstrap"
-];
 
 const certifications = [
   {
     name: "AWS Certified Solutions Architect",
     issuer: "Amazon Web Services",
-    year: "2023"
+    year: "2025"
   },
   {
-    name: "Certified Kubernetes Administrator",
-    issuer: "Cloud Native Computing Foundation",
-    year: "2022"
+    name: "Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    year: "2024"
   },
-  {
-    name: "Google Cloud Professional DevOps Engineer",
-    issuer: "Google Cloud",
-    year: "2022"
-  },
-  {
-    name: "Docker Certified Associate",
-    issuer: "Docker Inc.",
-    year: "2021"
-  }
 ];
 
 const Skills = () => {
@@ -110,30 +96,7 @@ const Skills = () => {
           })}
         </div>
 
-        {/* Frameworks Section */}
-        <div className="mb-16">
-          <Card className="bg-card/50 border-border/50 shadow-card">
-            <CardHeader>
-              <CardTitle className="text-xl text-center flex items-center justify-center gap-3">
-                <Code className="h-6 w-6 text-primary" />
-                Frameworks & Libraries
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-3 justify-center">
-                {frameworks.map((framework, index) => (
-                  <Badge 
-                    key={index} 
-                    variant="outline" 
-                    className="border-primary/20 text-muted-foreground hover:bg-primary/10 hover:border-primary/40 transition-smooth cursor-default text-sm py-2 px-4"
-                  >
-                    {framework}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+      
 
         {/* Certifications Section */}
         <div>

@@ -7,7 +7,7 @@ const projects = [
   {
     title: "CloudOps Dashboard",
     description: "A comprehensive monitoring and management platform for multi-cloud infrastructure with real-time metrics, alerting, and automated scaling capabilities.",
-    image: "/api/placeholder/600/400",
+    image: "/images/WebAppSS.png",
     technologies: ["React", "TypeScript", "Node.js", "AWS", "Docker", "Prometheus"],
     github: "https://github.com",
     live: "https://demo.com",
@@ -74,16 +74,29 @@ const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <Card key={index} className="group bg-card/50 border-border/50 hover:bg-card/70 transition-smooth shadow-card hover:shadow-glow overflow-hidden">
-              <div className="aspect-video bg-gradient-primary relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-primary opacity-20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto animate-glow">
-                      <ExternalLink className="h-8 w-8 text-primary" />
-                    </div>
-                    <p className="text-primary font-semibold">Project Preview</p>
-                  </div>
-                </div>
+              <div className="aspect-video relative overflow-hidden bg-muted/20">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.parentElement!.innerHTML = `
+                      <div class="absolute inset-0 flex items-center justify-center bg-gradient-primary">
+                        <div class="text-center">
+                          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                          </div>
+                          <p class="text-primary font-semibold">Project Image</p>
+                        </div>
+                      </div>
+                    `;
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
               <CardHeader>

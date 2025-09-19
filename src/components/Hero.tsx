@@ -27,11 +27,11 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slideUp" style={{ animationDelay: '0.6s' }}>
-            <Button variant="default" size="lg" className="bg-gradient-primary hover:shadow-glow transition-smooth">
+            <Button variant="default" size="lg" className="bg-gradient-primary hover:shadow-glow hover:-translate-y-1 transition-all duration-300 ease-in-out">
               <Mail className="mr-2 h-4 w-4" />
               Get In Touch
             </Button>
-            <Button variant="outline" size="lg" className="border-primary/20 hover:bg-primary/10 transition-smooth">
+            <Button variant="outline" size="lg" className="border-primary/50 hover:bg-gradient-hero hover:-translate-y-1 transition-all duration-300 ease-in-out">
               <Github className="mr-2 h-4 w-4" />
               View Projects
             </Button>

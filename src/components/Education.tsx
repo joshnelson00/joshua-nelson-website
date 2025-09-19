@@ -4,63 +4,27 @@ import { GraduationCap, Calendar, MapPin, Award } from "lucide-react";
 
 const education = [
   {
-    degree: "Master of Science in Computer Science",
-    school: "Stanford University",
-    location: "Stanford, CA",
-    period: "2016 - 2018",
-    gpa: "3.9/4.0",
-    specialization: "Distributed Systems & Cloud Computing",
+    degree: "Bachelor of Science in Computer Science",
+    school: "Grand Canyon University",
+    location: "Phoenix, AZ",
+    period: "2023-2027",
+    gpa: "3.81/4.0",
+    specialization: "Big Data Analytics",
     coursework: [
-      "Advanced Database Systems",
-      "Distributed Computing",
-      "Machine Learning",
-      "Software Engineering",
-      "Cloud Infrastructure"
+      "Design of Database Systems",
+      "Algorithms and Data Structures",
+      "Object Oriented Design",
+      "Computer Architecture",
     ],
     achievements: [
-      "Dean's List - 4 consecutive semesters",
-      "Graduate Research Assistant",
-      "Published paper on distributed system optimization"
+      "Honors College",
+      "President's List",
     ]
   },
-  {
-    degree: "Bachelor of Science in Software Engineering",
-    school: "University of Texas at Austin",
-    location: "Austin, TX", 
-    period: "2012 - 2016",
-    gpa: "3.7/4.0",
-    specialization: "Software Architecture & Development",
-    coursework: [
-      "Data Structures & Algorithms",
-      "Operating Systems",
-      "Computer Networks",
-      "Software Design Patterns",
-      "Agile Development"
-    ],
-    achievements: [
-      "Summa Cum Laude graduate",
-      "Computer Science Honor Society",
-      "ACM Programming Competition - Regional Finalist"
-    ]
-  }
 ];
 
 const additionalCertifications = [
-  {
-    title: "Certified Jenkins Engineer",
-    issuer: "CloudBees",
-    date: "2023"
-  },
-  {
-    title: "Terraform Associate",
-    issuer: "HashiCorp",
-    date: "2022"
-  },
-  {
-    title: "Certified Scrum Master",
-    issuer: "Scrum Alliance",
-    date: "2021"
-  }
+  
 ];
 
 const Education = () => {
@@ -150,7 +114,6 @@ const Education = () => {
         {/* Additional Certifications */}
         <div>
           <h3 className="text-2xl font-bold text-center mb-8 text-primary">
-            Additional Professional Certifications
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {additionalCertifications.map((cert, index) => (
