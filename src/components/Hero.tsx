@@ -31,13 +31,13 @@ const Hero = () => {
               <Mail className="mr-2 h-4 w-4" />
               Get In Touch
             </Button>
-            <Button asChild variant="outline" size="lg" className="bg-[#24292f] border border-[#30363d] text-white hover:bg-[#32383f] hover:text-white hover:border-[#8b949e] hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-in-out">
+            <Button asChild variant="outline" size="lg" className="bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-in-out">
               <a href="#projects" className="flex items-center">
                 <Github className="mr-2 h-4 w-4" />
                 View Projects
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="bg-[#0077B5] border border-[#0077B5] text-white hover:bg-[#005582] hover:text-white hover:border-[#005582] hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-in-out">
+            <Button asChild variant="outline" size="lg" className="bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-in-out">
               <a href="https://www.linkedin.com/in/joshnelson00/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 <Linkedin className="mr-2 h-4 w-4" />
                 LinkedIn

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, User, Briefcase, Code, GraduationCap, Mail } from "lucide-react";
 
@@ -16,9 +16,6 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [showCursor, setShowCursor] = useState(true);
-  const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 });
-  const [isAnimating, setIsAnimating] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,28 +49,6 @@ const Header = () => {
 
     return () => clearInterval(cursorInterval);
   }, []);
-
-  // Update indicator position when active section changes
-  useEffect(() => {
-    if (navRef.current) {
-      const activeLink = navRef.current.querySelector(`[data-section="${activeSection}"]`) as HTMLElement;
-      if (activeLink) {
-        setIsAnimating(true);
-        const rect = activeLink.getBoundingClientRect();
-        const navRect = navRef.current.getBoundingClientRect();
-        
-        setIndicatorStyle({
-          width: rect.width,
-          left: rect.left - navRect.left,
-        });
-
-        // Add jiggle effect after the slide animation
-        setTimeout(() => {
-          setIsAnimating(false);
-        }, 300);
-      }
-    }
-  }, [activeSection]);
 
   const scrollToSection = (href: string) => {
     const targetId = href.substring(1);
@@ -114,18 +89,7 @@ const Header = () => {
             </button>
 
             {/* Desktop Navigation */}
-            <nav ref={navRef} className="hidden md:flex items-center justify-end flex-1 relative">
-              {/* Sliding indicator */}
-              <div 
-                className={`absolute bottom-2 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-500 ease-out ${
-                  isAnimating ? 'scale-y-150 animate-pulse' : 'scale-y-100'
-                }`}
-                style={{ 
-                  width: `${indicatorStyle.width}px`, 
-                  left: `${indicatorStyle.left}px`,
-                  transformOrigin: 'center',
-                }}
-              />
+            <nav className="hidden md:flex items-center justify-end flex-1">
               <div className="flex items-center space-x-1">
                 {navigation.map((item) => {
                   const Icon = item.icon;
@@ -134,7 +98,6 @@ const Header = () => {
                   return (
                     <button
                       key={item.name}
-                      data-section={item.href.substring(1)}
                       onClick={() => scrollToSection(item.href)}
                       className={`group relative flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border border-transparent ${
                         isActive
@@ -147,6 +110,9 @@ const Header = () => {
                       }`} />
                       <span className="relative">
                         {item.name}
+                        {isActive && (
+                          <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                        )}
                       </span>
                     </button>
                   );
