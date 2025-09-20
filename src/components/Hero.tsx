@@ -26,7 +26,7 @@ const Hero = () => {
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slideUp" style={{ animationDelay: '0.6s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slideUp" style={{ animationDelay: '0.6s' }}>
             <Button variant="default" size="lg" className="bg-gradient-primary hover:shadow-glow hover:-translate-y-1 transition-all duration-300 ease-in-out">
               <Mail className="mr-2 h-4 w-4" />
               Get In Touch
@@ -37,21 +37,12 @@ const Hero = () => {
                 View Projects
               </a>
             </Button>
-          </div>
-          
-          <div className="flex justify-center gap-6 mb-16 animate-slideUp" style={{ animationDelay: '0.8s' }}>
-            <a href="https://github.com/joshnelson00" target="_blank" rel="noopener noreferrer" 
-               className="text-muted-foreground hover:text-primary transition-smooth hover:scale-110">
-              <Github className="h-6 w-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/joshnelson00/" target="_blank" rel="noopener noreferrer"
-               className="text-muted-foreground hover:text-primary transition-smooth hover:scale-110">
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a href="mailto:joshuaknelson1202@icloud.com"
-               className="text-muted-foreground hover:text-primary transition-smooth hover:scale-110">
-              <Mail className="h-6 w-6" />
-            </a>
+            <Button asChild variant="outline" size="lg" className="bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-in-out">
+              <a href="https://www.linkedin.com/in/joshnelson00/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <Linkedin className="mr-2 h-4 w-4" />
+                LinkedIn
+              </a>
+            </Button>
           </div>
         </div>
       </div>
