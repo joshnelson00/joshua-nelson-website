@@ -72,8 +72,8 @@ const Header = () => {
               onClick={() => scrollToSection("#home")}
               className="text-2xl font-bold hover:scale-105 transform-gpu will-change-transform transition-transform duration-300 ease-out tracking-tight"
             >
-              <span className="font-inter font-semibold text-white">
-                &lt;Joshua.Nelson/&gt;
+              <span className="font-orbitron font-bold text-white tracking-wider">
+                Joshua Nelson
               </span>
             </button>
 
