@@ -38,7 +38,7 @@ const experiences = [
     period: "Oct 2024 - April 2025",
     description:
       "Led a team of engineers developing AI-powered object detection solutions and feasibility studies for edge deployment.",
-    technologies: ["YOLO v4", "ESP-32", "Python", "Agile", "Computer Vision"],
+    technologies: ["Computer Vision", "Python", "ESP-32", "Agile", ],
     achievements: [
       "Implemented YOLO v4 object detection to recognize hand gestures at 25 ft distance",
       "Analyzed feasibility of object detection on ESP-32 with low-memory optimization",

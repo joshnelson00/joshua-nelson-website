@@ -40,15 +40,15 @@ const Hero = () => {
           </div>
           
           <div className="flex justify-center gap-6 mb-16 animate-slideUp" style={{ animationDelay: '0.8s' }}>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://github.com/joshnelson00" target="_blank" rel="noopener noreferrer" 
                className="text-muted-foreground hover:text-primary transition-smooth hover:scale-110">
               <Github className="h-6 w-6" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/joshnelson00/" target="_blank" rel="noopener noreferrer"
                className="text-muted-foreground hover:text-primary transition-smooth hover:scale-110">
               <Linkedin className="h-6 w-6" />
             </a>
-            <a href="mailto:joshua@example.com"
+            <a href="mailto:joshuaknelson1202@icloud.com"
                className="text-muted-foreground hover:text-primary transition-smooth hover:scale-110">
               <Mail className="h-6 w-6" />
             </a>

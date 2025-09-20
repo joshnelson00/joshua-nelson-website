@@ -91,7 +91,7 @@ const Projects = () => {
                       <img 
                         src={project.image} 
                         alt={project.title}
-                        className="absolute inset-0 w-full h-full object-contain scale-90"
+                        className="absolute inset-0 w-full h-full object-cover"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = 'none';
