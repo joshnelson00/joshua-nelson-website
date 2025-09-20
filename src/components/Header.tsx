@@ -70,7 +70,7 @@ const Header = () => {
             {/* Logo */}
             <button
               onClick={() => scrollToSection("#home")}
-              className="text-2xl font-bold hover:scale-105 transform-gpu will-change-transform transition-transform duration-300 ease-out tracking-tight"
+              className="text-2xl font-bold hover:text-shadow-sm hover:opacity-80 transition-all duration-300 ease-out tracking-tight"
             >
               <span className="font-mono font-medium text-white tracking-wide">
                 joshua@nelson:~$
