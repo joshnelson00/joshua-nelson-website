@@ -16,6 +16,9 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [showCursor, setShowCursor] = useState(true);
+  const [terminalPath, setTerminalPath] = useState("~");
+  const [isTyping, setIsTyping] = useState(false);
+  const [displayedPath, setDisplayedPath] = useState("~");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,9 +53,58 @@ const Header = () => {
     return () => clearInterval(cursorInterval);
   }, []);
 
-  const scrollToSection = (href: string) => {
+  // Terminal typing animation effect
+  useEffect(() => {
+    if (terminalPath === displayedPath) {
+      setIsTyping(false);
+      return;
+    }
+
+    setIsTyping(true);
+    const targetPath = terminalPath;
+    const currentPath = displayedPath;
+    
+    // Determine if we're adding or removing characters
+    const isAdding = targetPath.length > currentPath.length;
+    const maxLength = Math.max(targetPath.length, currentPath.length);
+    
+    let currentIndex = currentPath.length;
+    
+    const typeInterval = setInterval(() => {
+      if (isAdding) {
+        // Typing animation - add characters
+        if (currentIndex < targetPath.length) {
+          setDisplayedPath(targetPath.substring(0, currentIndex + 1));
+          currentIndex++;
+        } else {
+          clearInterval(typeInterval);
+          setIsTyping(false);
+        }
+      } else {
+        // Deleting animation - remove characters
+        if (currentIndex > targetPath.length) {
+          setDisplayedPath(targetPath.substring(0, currentIndex - 1));
+          currentIndex--;
+        } else {
+          clearInterval(typeInterval);
+          setIsTyping(false);
+        }
+      }
+    }, 50); // Typing speed
+
+    return () => clearInterval(typeInterval);
+  }, [terminalPath, displayedPath]);
+
+  const scrollToSection = (href: string, sectionName?: string) => {
     const targetId = href.substring(1);
     const element = document.getElementById(targetId);
+    
+    // Update terminal path with realistic bash syntax
+    if (sectionName && sectionName.toLowerCase() !== "home") {
+      setTerminalPath(`~/${sectionName.toLowerCase()}`);
+    } else {
+      setTerminalPath("~");
+    }
     
     if (element) {
       const headerOffset = 80;
@@ -83,8 +135,8 @@ const Header = () => {
               className="text-2xl font-bold hover:text-shadow-sm hover:opacity-80 transition-all duration-300 ease-out tracking-tight"
             >
               <span className="font-mono font-medium text-white tracking-wide flex items-center">
-                joshua@nelson:~$
-                <span className={`ml-1 inline-block w-2 h-5 bg-white align-middle ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}></span>
+                joshua@nelson:{displayedPath}$
+                <span className={`ml-1 inline-block w-2 h-5 bg-white align-middle ${showCursor && !isTyping ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}></span>
               </span>
             </button>
 
@@ -98,7 +150,7 @@ const Header = () => {
                   return (
                     <button
                       key={item.name}
-                      onClick={() => scrollToSection(item.href)}
+                      onClick={() => scrollToSection(item.href, item.name)}
                       className={`group relative flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 border border-transparent ${
                         isActive
                           ? "bg-gradient-to-r from-primary/20 to-accent/20 text-primary shadow-lg backdrop-blur-sm border-primary/30"

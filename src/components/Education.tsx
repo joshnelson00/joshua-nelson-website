@@ -9,7 +9,7 @@ const education = [
     location: "Phoenix, AZ",
     period: "2023-2027",
     gpa: "3.81/4.0",
-    specialization: "Big Data Analytics",
+    specialization: "Emphasis in Big Data Analytics",
     coursework: [
       "Design of Database Systems",
       "Algorithms and Data Structures",
@@ -33,7 +33,7 @@ const Education = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Education & Certifications
+            Education
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Academic foundation and continuous learning in cutting-edge technologies

@@ -60,13 +60,13 @@ const Projects = () => {
         </div>
 
         <div className="relative max-w-5xl mx-auto">
-          {/* Enhanced vignette/shader effects */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[hsl(220,31%,6%)] via-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[hsl(220,31%,6%)] via-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
+          {/* Enhanced vignette/shader effects - adjusted for mobile */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[hsl(220,31%,6%)] via-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[hsl(220,31%,6%)] via-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
           
-          {/* Additional inner vignette for shader effect */}
-          <div className="absolute left-8 top-0 bottom-0 w-20 bg-gradient-to-r from-transparent via-black/10 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-8 top-0 bottom-0 w-20 bg-gradient-to-l from-transparent via-black/10 to-transparent z-10 pointer-events-none"></div>
+          {/* Additional inner vignette for shader effect - mobile optimized */}
+          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-r from-transparent via-black/10 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-4 md:right-8 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-l from-transparent via-black/10 to-transparent z-10 pointer-events-none"></div>
           
           <Carousel 
             plugins={[
@@ -83,11 +83,11 @@ const Projects = () => {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-1 md:-ml-2">
+            <CarouselContent className="-ml-2 md:-ml-2">
               {projects.map((project, index) => (
-                <CarouselItem key={index} className="pl-1 md:pl-2 basis-full md:basis-[70%] lg:basis-[60%]">
-                  <Card className="group bg-card/30 border-2 border-primary/30 hover:bg-card/50 hover:border-primary/50 transition-smooth shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 overflow-hidden h-full">
-                    <div className="aspect-video relative overflow-hidden bg-muted/20" style={{ aspectRatio: '16/10' }}>
+                <CarouselItem key={index} className="pl-2 md:pl-2 basis-full sm:basis-[85%] md:basis-[70%] lg:basis-[60%]">
+                  <Card className="group bg-card/30 border-2 border-primary/30 hover:bg-card/50 hover:border-primary/50 transition-smooth shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 overflow-hidden h-full mx-0 md:mx-0">
+                    <div className="aspect-video relative overflow-hidden bg-muted/20 md:aspect-video" style={{ aspectRatio: '16/10' }}>
                       <img 
                         src={project.image} 
                         alt={project.title}
@@ -136,30 +136,30 @@ const Projects = () => {
                       </div>
                       
                       <div className="flex flex-wrap gap-1">
-                        {project.technologies.slice(0, 4).map((tech, idx) => (
-                          <Badge key={idx} variant="outline" className="text-xs px-2 py-0 border-primary/20 text-muted-foreground hover:bg-primary/10 transition-smooth">
+                        {project.technologies.slice(0, 3).map((tech, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs px-2 py-1 border-primary/20 text-muted-foreground hover:bg-primary/10 transition-smooth">
                             {tech}
                           </Badge>
                         ))}
-                        {project.technologies.length > 4 && (
-                          <Badge variant="outline" className="text-xs px-2 py-0 border-primary/20 text-muted-foreground">
-                            +{project.technologies.length - 4}
+                        {project.technologies.length > 3 && (
+                          <Badge variant="outline" className="text-xs px-2 py-1 border-primary/20 text-muted-foreground">
+                            +{project.technologies.length - 3}
                           </Badge>
                         )}
                       </div>
                       
                       <div className="flex gap-2 pt-2">
-                        <Button variant="outline" size="sm" asChild className="flex-1 text-xs h-8 bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-2px] transition-all duration-300 ease-in-out">
+                        <Button variant="outline" size="sm" asChild className="flex-1 text-xs h-9 md:h-8 bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-2px] transition-all duration-300 ease-in-out">
                           <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                            <Github className="mr-1 h-3 w-3" />
-                            Code
+                            <Github className="mr-1 h-3 w-3 md:h-3 md:w-3" />
+                            <span className="text-xs md:text-xs">Code</span>
                           </a>
                         </Button>
                         {project.live && (
-                          <Button size="sm" asChild className="flex-1 text-xs h-8 bg-gradient-primary hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                          <Button size="sm" asChild className="flex-1 text-xs h-9 md:h-8 bg-gradient-primary hover:-translate-y-1 transition-all duration-300 ease-in-out">
                             <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                              <ExternalLink className="mr-1 h-3 w-3" />
-                              Demo
+                              <ExternalLink className="mr-1 h-3 w-3 md:h-3 md:w-3" />
+                              <span className="text-xs md:text-xs">Demo</span>
                             </a>
                           </Button>
                         )}
@@ -169,8 +169,8 @@ const Projects = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-2 md:left-4 h-10 w-10 md:h-12 md:w-12 bg-card/90 border-2 border-primary/40 hover:bg-primary/20 hover:border-primary/60 hover:scale-110 transition-all duration-200 shadow-lg shadow-primary/10 hover:shadow-primary/20 z-20" />
-            <CarouselNext className="right-2 md:right-4 h-10 w-10 md:h-12 md:w-12 bg-card/90 border-2 border-primary/40 hover:bg-primary/20 hover:border-primary/60 hover:scale-110 transition-all duration-200 shadow-lg shadow-primary/10 hover:shadow-primary/20 z-20" />
+            <CarouselPrevious className="left-1 md:left-4 h-12 w-12 md:h-12 md:w-12 bg-card/90 border-2 border-primary/40 hover:bg-primary/20 hover:border-primary/60 hover:scale-110 transition-all duration-200 shadow-lg shadow-primary/10 hover:shadow-primary/20 z-20 rounded-full" />
+            <CarouselNext className="right-1 md:right-4 h-12 w-12 md:h-12 md:w-12 bg-card/90 border-2 border-primary/40 hover:bg-primary/20 hover:border-primary/60 hover:scale-110 transition-all duration-200 shadow-lg shadow-primary/10 hover:shadow-primary/20 z-20 rounded-full" />
           </Carousel>
         </div>
       </div>

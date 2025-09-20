@@ -22,7 +22,7 @@ const Hero = () => {
               Software Engineer & DevOps Specialist
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slideUp" style={{ animationDelay: '0.4s' }}>
-              Crafting scalable solutions and robust infrastructure with passion for innovation and clean code
+              Crafting scalable solutions and robust infrastructure with passion for innovation and solutions
             </p>
           </div>
           
@@ -37,7 +37,7 @@ const Hero = () => {
                 View Projects
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-in-out">
+            <Button asChild variant="outline" size="lg" className="bg-[#0A66C2] border border-[#0A66C2] text-white hover:bg-[#004182] hover:text-white hover:border-[#004182] hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-in-out">
               <a href="https://www.linkedin.com/in/joshnelson00/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 <Linkedin className="mr-2 h-4 w-4" />
                 LinkedIn
