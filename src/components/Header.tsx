@@ -72,8 +72,8 @@ const Header = () => {
               onClick={() => scrollToSection("#home")}
               className="text-2xl font-bold hover:scale-105 transform-gpu will-change-transform transition-transform duration-300 ease-out tracking-tight"
             >
-              <span className="font-mono bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                &lt;Joshua<span className="text-accent">.</span>Nelson<span className="text-primary">/&gt;</span>
+              <span className="font-inter font-semibold text-white">
+                &lt;Joshua.Nelson/&gt;
               </span>
             </button>
 
