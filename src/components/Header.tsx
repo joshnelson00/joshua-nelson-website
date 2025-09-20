@@ -15,6 +15,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +39,15 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Blinking cursor effect
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500); // Blink every 500ms
+
+    return () => clearInterval(cursorInterval);
   }, []);
 
   const scrollToSection = (href: string) => {
@@ -72,8 +82,9 @@ const Header = () => {
               onClick={() => scrollToSection("#home")}
               className="text-2xl font-bold hover:text-shadow-sm hover:opacity-80 transition-all duration-300 ease-out tracking-tight"
             >
-              <span className="font-mono font-medium text-white tracking-wide">
+              <span className="font-mono font-medium text-white tracking-wide flex items-center">
                 joshua@nelson:~$
+                <span className={`ml-1 inline-block w-2 h-5 bg-white align-middle ${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}></span>
               </span>
             </button>
 

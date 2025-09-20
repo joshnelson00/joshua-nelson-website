@@ -7,7 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   // Base path for GitHub Pages deployment
   // Update this to match your repository name
-  base: mode === 'production' ? '/joshua-warm-ember-folio/' : '/',
+  base: mode === 'production' ? '/' : '/',
   
   server: {
     host: "::",
