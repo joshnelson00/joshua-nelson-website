@@ -1,117 +1,73 @@
-# Welcome to your Lovable project
+# Joshua Nelson Portfolio
 
-## Project info
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This interactive portfolio features a terminal-style navigation system and smooth scrolling between sections.
 
-**URL**: https://lovable.dev/projects/9145eaf2-6010-4a5a-ad5e-6ad5bbfbd95a
+## Features
 
-## How can I edit this code?
+- **Terminal-Style Navigation**: Interactive header with bash-like terminal path display
+- **Smooth Scrolling**: Seamless navigation between sections with scroll-based section detection
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Modern UI**: Clean, professional design with gradient accents and smooth animations
+- **Interactive Elements**: Hover effects, typing animations, and dynamic content
 
-There are several ways of editing your application.
+## Project Sections
 
-**Use Lovable**
+- **Home**: Hero section with introduction and terminal-style branding
+- **About**: Personal information and background
+- **Projects**: Showcase of featured work and projects
+- **Skills**: Technical skills and expertise
+- **Education**: Academic background and qualifications
+- **Contact**: Contact information and social links
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9145eaf2-6010-4a5a-ad5e-6ad5bbfbd95a) and start prompting.
+## Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend Framework**: React 18 with TypeScript
+- **Build Tool**: Vite for fast development and building
+- **Styling**: Tailwind CSS for utility-first styling
+- **UI Components**: shadcn/ui for accessible, reusable components
+- **Icons**: Lucide React for consistent iconography
+- **Animations**: CSS transitions and custom JavaScript animations
 
-**Use your preferred IDE**
+## Key Features Implementation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Terminal Navigation System
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The portfolio features a unique terminal-style navigation system where:
+- Clicking navigation links updates the terminal path (e.g., `~`, `~/about`, `~/projects`)
+- Scrolling to different sections automatically updates the terminal path
+- Typing animations simulate real terminal behavior
+- Blinking cursor effect for authentic terminal feel
 
-Follow these steps:
+### Scroll-Based Section Detection
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Automatically detects which section is currently in view
+- Updates active navigation state based on scroll position
+- Synchronizes terminal path display with current section
+- Smooth scrolling with proper header offset calculation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Responsive Design
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Mobile-first approach with hamburger menu for smaller screens
+- Adaptive navigation that works on all device sizes
+- Consistent styling and behavior across breakpoints
+- Touch-friendly interactive elements
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Development
 
-**Edit a file directly in GitHub**
+This project was developed using modern web development practices with a focus on:
+- Clean, maintainable code structure
+- Component-based architecture
+- Accessibility and semantic HTML
+- Performance optimization
+- Cross-browser compatibility
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Browser Support
 
-**Use GitHub Codespaces**
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## License
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-### Option 1: Deploy via Lovable
-Simply open [Lovable](https://lovable.dev/projects/9145eaf2-6010-4a5a-ad5e-6ad5bbfbd95a) and click on Share -> Publish.
-
-### Option 2: Deploy to GitHub Pages
-This project is configured for easy deployment to GitHub Pages:
-
-#### Prerequisites
-- Node.js & npm installed
-- Git repository set up on GitHub
-- `gh-pages` package installed (already included in devDependencies)
-
-#### Deployment Steps
-
-1. **Build the project**
-   ```bash
-   npm run build:gh-pages
-   ```
-
-2. **Deploy to GitHub Pages**
-   ```bash
-   npm run deploy
-   ```
-   This will automatically build the project and deploy it to the `gh-pages` branch.
-
-3. **Configure GitHub Pages**
-   - Go to your repository on GitHub
-   - Click on "Settings" > "Pages"
-   - Under "Source", select "Deploy from a branch"
-   - Choose the `gh-pages` branch and `/ (root)` folder
-   - Click "Save"
-
-4. **Access your site**
-   Your site will be available at: `https://<your-username>.github.io/<your-repo-name>/`
-
-#### Custom Domain
-
-To connect a custom domain to your GitHub Pages site:
-
-1. **Configure GitHub Pages**
-   - Go to repository Settings > Pages
-   - Under "Custom domain", enter your domain
-   - Check "Enforce HTTPS"
-
-2. **Configure DNS**
-   Add a CNAME record pointing to `<your-username>.github.io`
-
-### Option 3: Lovable Custom Domain
-
-Yes, you can also connect a custom domain via Lovable!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is open source and available under the [MIT License](LICENSE).
