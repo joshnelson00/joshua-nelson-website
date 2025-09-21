@@ -37,6 +37,14 @@ const Header = () => {
       
       if (currentSection) {
         setActiveSection(currentSection);
+        
+        // Update terminal path when scrolling to a new section
+        const sectionName = navigation.find(nav => nav.href.substring(1) === currentSection)?.name;
+        if (sectionName && sectionName.toLowerCase() !== "home") {
+          setTerminalPath(`~/${sectionName.toLowerCase()}`);
+        } else {
+          setTerminalPath("~");
+        }
       }
     };
 
