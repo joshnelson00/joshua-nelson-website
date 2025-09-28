@@ -1,0 +1,64 @@
+name: Publish Docker image
+
+on:
+    push:
+        branches: [main]
+    release:
+        types: [published]
+
+jobs:
+    push_to_registry:
+        name: Push Docker image to Docker Hub
+        runs-on: ubuntu-latest
+        permissions:
+            packages: write
+            contents: read
+            attestations: write
+            id-token: write
+
+        steps:
+            # 1️⃣ Checkout repository
+            - name: Check out the repo
+              uses: actions/checkout@v5
+
+            # 2️⃣ Log in to Docker Hub
+            - name: Log in to Docker Hub
+              uses: docker/login-action@v2
+              with:
+                  username: ${{ secrets.DOCKER_USERNAME }}
+                  password: ${{ secrets.DOCKER_PASSWORD }}
+
+            # 3️⃣ Setup Buildx for multi-arch builds
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v2
+
+            # 4️⃣ Setup QEMU for ARM emulation
+            - name: Set up QEMU
+              uses: docker/setup-qemu-action@v2
+
+            # 5️⃣ Extract Docker metadata
+            - name: Extract metadata (tags, labels) for Docker
+              id: meta
+              uses: docker/metadata-action@v4
+              with:
+                  images: joshnelson00/joshua-nelson-website
+
+            # 6️⃣ Build and push Docker image for ARM64 (Pi OS 64-bit)
+            - name: Build and push Docker image
+              id: push
+              uses: docker/build-push-action@v3
+              with:
+                  context: .
+                  file: ./Dockerfile
+                  push: true
+                  tags: ${{ steps.meta.outputs.tags }}
+                  labels: ${{ steps.meta.outputs.labels }}
+                  platforms: linux/arm64
+
+            # 7️⃣ Optional: Generate artifact attestation
+            - name: Generate artifact attestation
+              uses: actions/attest-build-provenance@v3
+              with:
+                  subject-name: index.docker.io/joshnelson00/joshua-nelson-website
+                  subject-digest: ${{ steps.push.outputs.digest }}
+                  push-to-registry: true
