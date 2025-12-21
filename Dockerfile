@@ -1,40 +1,19 @@
 # ==========================
-# Stage 1: Build the app
+# Stage 1: Build
 # ==========================
 FROM node:20-alpine AS builder
-
-# Set working directory
-WORKDIR /usr/src/app
-
-# Copy package.json and package-lock.json
+WORKDIR /app
 COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy app source code
+RUN npm ci
 COPY . .
-
-# Build the app (outputs to /usr/src/app/dist)
 RUN npm run build
 
-
 # ==========================
-# Stage 2: Serve with Nginx
+# Stage 2: Serve
 # ==========================
-FROM nginx:stable-alpine
-
-# Remove default Nginx website
-RUN rm -rf /usr/share/nginx/html/*
-
-# Copy built files from builder
-COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
-
-# Copy custom Nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:20-alpine
+WORKDIR /app
+RUN npm install -g serve
+COPY --from=builder /app/dist ./dist
+EXPOSE 3000
+CMD ["serve", "-s", "dist", "-l", "3000"]
