@@ -44,12 +44,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                      <a
-                        href="tel:+1-785-851-6299"
-                        className="text-muted-foreground hover:text-primary transition-smooth"
-                      >
+                      <span className="text-muted-foreground">
                         +1 (785)-851-6299
-                      </a>
+                      </span>
                     </div>
                   </div>
 
@@ -99,14 +96,14 @@ const Contact = () => {
                 <div className="space-y-6">
                   <p className="text-muted-foreground leading-relaxed">
                     I’m passionate about building scalable systems, improving developer workflows, 
-                    and driving innovation through software and cloud platforms.
+                    and driving innovation through software, cloud, and on-prem platforms.
                   </p>
 
                   <div className="space-y-4">
                     <div className="p-4 bg-secondary/30 rounded-lg border border-border/30">
                       <h4 className="font-semibold text-primary mb-2">What I’m Looking For:</h4>
                       <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• Software Engineer roles (backend)</li>
+                        <li>• Site Reliability engineering</li>
                         <li>• DevOps & Infrastructure engineering</li>
                         <li>• Platform engineering & reliability</li>
                         <li>• Cloud architecture & automation</li>

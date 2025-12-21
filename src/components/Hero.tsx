@@ -19,7 +19,7 @@ const Hero = () => {
               Joshua Nelson
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-2 animate-slideUp" style={{ animationDelay: '0.2s' }}>
-              Software Engineer & DevOps Specialist
+              Site Reliability Engineer & DevOps Specialist
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-slideUp" style={{ animationDelay: '0.4s' }}>
               Crafting scalable solutions and robust infrastructure with passion for innovation and solutions
@@ -27,12 +27,19 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slideUp" style={{ animationDelay: '0.6s' }}>
-            <Button variant="default" size="lg" className="bg-gradient-primary hover:shadow-glow hover:-translate-y-1 transition-all duration-300 ease-in-out">
-              <Mail className="mr-2 h-4 w-4" />
-              Get In Touch
+            <Button 
+              asChild 
+              variant="default" 
+              size="lg" 
+              className="bg-gradient-primary hover:shadow-glow hover:-translate-y-1 transition-all duration-300 ease-in-out"
+            >
+              <a href="mailto:joshuaknelson1202@icloud.com" className="flex items-center">
+                <Mail className="mr-2 h-4 w-4" />
+                Get In Touch
+              </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="bg-[#0b0e15] border border-gray-400 text-white hover:bg-[#0b0e15] hover:text-white hover:border-gray-400 hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-in-out">
-              <a href="#projects" className="flex items-center">
+              <a href="https://github.com/joshnelson00" className="flex items-center">
                 <Github className="mr-2 h-4 w-4" />
                 View Projects
               </a>

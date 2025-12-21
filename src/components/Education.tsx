@@ -8,7 +8,7 @@ const education = [
     school: "Grand Canyon University",
     location: "Phoenix, AZ",
     period: "2023-2027",
-    gpa: "3.81/4.0",
+    gpa: "3.77/4.0",
     specialization: "Emphasis in Big Data Analytics",
     coursework: [
       "Design of Database Systems",

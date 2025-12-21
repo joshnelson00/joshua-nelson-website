@@ -4,8 +4,8 @@ import { Menu, X, Home, User, Briefcase, Code, GraduationCap, Mail } from "lucid
 
 const navigation = [
   { name: "Home", href: "#home", icon: Home },
-  { name: "About", href: "#about", icon: User },
-  { name: "Projects", href: "#projects", icon: Briefcase },
+  { name: "Experience", href: "#experience", icon: Briefcase },
+  { name: "Projects", href: "#projects", icon: Code },
   { name: "Skills", href: "#skills", icon: Code },
   { name: "Education", href: "#education", icon: GraduationCap },
   { name: "Contact", href: "#contact", icon: Mail },

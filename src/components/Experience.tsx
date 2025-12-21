@@ -4,6 +4,20 @@ import { Calendar, MapPin } from "lucide-react";
 
 const experiences = [
   {
+    title: "Freelance Web Infrastructure Engineer",
+    company: "KCMusicStudio",
+    location: "Kansas City, MO",
+    period: "May 2025 - July 2025",
+    description:
+      "Led infrastructure upgrades and migrations for a live e-commerce platform and associated WordPress sites, ensuring stability, performance, and security.",
+    technologies: [ "Linux", "Backups", "Staging Environments", "PHP 8.2", "WordPress 6.6", "WooCommerce"],
+    achievements: [
+      "Upgraded PHP 8.2 / WordPress 6.6 with < 1 hour downtime and zero data loss for 100+ active users",
+      "Deployed staging environments across 3 WordPress sites, reducing production deployment issues by 90%",
+      "Implemented daily offsite backups with 30-day retention and tested restore procedures for 100% recovery success"
+    ]
+  },
+  {
     title: "President",
     company: "Canyon Artificial Intelligence Research",
     location: "Phoenix, AZ",
@@ -15,20 +29,6 @@ const experiences = [
       "Facilitated monthly standups and coordinated workflows across multiple research projects",
       "Led strategic planning driving a 135% membership increase (20 → 47 members)",
       "Launched 5 new research project initiatives expanding exploration and technical learning opportunities"
-    ]
-  },
-  {
-    title: "Freelance Web Infrastructure Engineer",
-    company: "KCMusicStudio",
-    location: "Kansas City, MO",
-    period: "May 2025 - July 2025",
-    description:
-      "Led infrastructure upgrades and migrations for a live e-commerce platform and associated WordPress sites, ensuring stability, performance, and security.",
-    technologies: [ "Linux", "Backups", "Staging Environments", "PHP 8.2", "WordPress 6.6", "WooCommerce"],
-    achievements: [
-      "Upgraded PHP 8.2 / WordPress 6.6 with <1 hour downtime and zero data loss for 100+ active users",
-      "Deployed staging environments across 3 WordPress sites, reducing production deployment issues by 90%",
-      "Implemented daily offsite backups with 30-day retention and tested restore procedures for 100% recovery success"
     ]
   },
   {
@@ -49,7 +49,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="about" className="py-20" style={{ backgroundColor: '#0b0e15' }}>
+    <section id="experience" className="py-20" style={{ backgroundColor: '#0b0e15' }}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
