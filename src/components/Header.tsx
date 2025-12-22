@@ -149,7 +149,7 @@ const Header = () => {
             </button>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center justify-end flex-1">
+            <nav className="hidden header-break:flex items-center justify-end flex-1">
               <div className="flex items-center space-x-1">
                 {navigation.map((item) => {
                   const Icon = item.icon;
@@ -184,7 +184,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
+              className="header-break:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -198,7 +198,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border/50">
+          <div className="header-break:hidden bg-background/95 backdrop-blur-md border-t border-border/50">
             <div className="container mx-auto px-6 py-4">
               <nav className="space-y-2">
                 {navigation.map((item) => {

@@ -4,22 +4,22 @@ import { Mail, MapPin, Phone, Github, Linkedin, Download } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20" style={{ backgroundColor: "#0b0e15" }}>
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Let’s Connect
+    <section id="contact" className="py-12 md:py-20 overflow-x-hidden" style={{ backgroundColor: "#0b0e15" }}>
+      <div className="container px-4 sm:px-6 mx-auto w-full">
+        <div className="text-center mb-12 md:mb-16 px-2">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-primary bg-clip-text text-transparent">
+            Let's Connect
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Open to new opportunities in software engineering, DevOps, and platform engineering
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="w-full max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Contact Information */}
-            <Card className="bg-card/30 border-2 border-primary/30 hover:bg-card/50 hover:border-primary/50 transition-smooth shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30">
-              <CardContent className="p-8">
+            <Card className="bg-card/30 border-2 border-primary/30 hover:bg-card/50 hover:border-primary/50 transition-smooth shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 w-full">
+              <CardContent className="p-6 sm:p-8">
                 <h3 className="text-2xl font-bold mb-6 text-primary">Get In Touch</h3>
 
                 <div className="space-y-6">
@@ -35,18 +35,6 @@ const Contact = () => {
                       >
                         joshuaknelson1202@icloud.com
                       </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <Phone className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                      <span className="text-muted-foreground">
-                        +1 (785)-851-6299
-                      </span>
                     </div>
                   </div>
 
@@ -89,8 +77,8 @@ const Contact = () => {
             </Card>
 
             {/* Call to Action */}
-            <Card className="bg-card/30 border-2 border-accent/30 hover:bg-card/50 hover:border-accent/50 transition-smooth shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30">
-              <CardContent className="p-8">
+            <Card className="bg-card/30 border-2 border-accent/30 hover:bg-card/50 hover:border-accent/50 transition-smooth shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 w-full">
+              <CardContent className="p-6 sm:p-8">
                 <h3 className="text-2xl font-bold mb-6 text-primary">Ready to Work Together?</h3>
 
                 <div className="space-y-6">
