@@ -140,11 +140,11 @@ const Header = () => {
             {/* Logo */}
             <button
               onClick={() => scrollToSection("#home")}
-              className="text-2xl font-bold hover:text-shadow-sm hover:opacity-80 transition-all duration-300 ease-out tracking-tight"
+              className="text-lg sm:text-2xl font-bold hover:text-shadow-sm hover:opacity-80 transition-all duration-300 ease-out tracking-tight"
             >
-              <span className="font-mono font-medium text-white tracking-wide flex items-center">
+              <span className="font-mono font-medium text-white tracking-wide flex items-center text-base sm:text-lg">
                 joshua@nelson:{displayedPath}$
-                <span className={`ml-1 inline-block w-2 h-5 bg-white align-middle ${showCursor && !isTyping ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}></span>
+                <span className={`ml-1 inline-block w-2 h-5 sm:w-2.5 sm:h-6 bg-white align-middle ${showCursor && !isTyping ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}></span>
               </span>
             </button>
 

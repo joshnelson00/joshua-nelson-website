@@ -59,14 +59,14 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
-          {/* Enhanced vignette/shader effects - adjusted for mobile */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[hsl(220,31%,6%)] via-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[hsl(220,31%,6%)] via-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
+        <div className="relative max-w-5xl mx-auto overflow-hidden">
+          {/* Desktop vignette */}
+          <div className="hidden md:block absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[hsl(220,31%,6%)] via-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
+          <div className="hidden md:block absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[hsl(220,31%,6%)] via-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
           
-          {/* Additional inner vignette for shader effect - mobile optimized */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-r from-transparent via-black/10 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-4 md:right-8 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-l from-transparent via-black/10 to-transparent z-10 pointer-events-none"></div>
+          {/* Mobile vignette - full width with overflow hidden */}
+          <div className="md:hidden absolute -left-1 top-0 bottom-0 w-20 bg-gradient-to-r from-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
+          <div className="md:hidden absolute -right-1 top-0 bottom-0 w-20 bg-gradient-to-l from-[hsl(220,31%,6%)] to-transparent z-10 pointer-events-none"></div>
           
           <Carousel 
             plugins={[
@@ -80,13 +80,47 @@ const Projects = () => {
             opts={{
               align: "center",
               loop: true,
+              dragFree: true,
+              slidesToScroll: 1,
+              containScroll: "keepSnaps",
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-2">
+            <CarouselContent className="ml-0">
               {projects.map((project, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-2 basis-full sm:basis-[85%] md:basis-[70%] lg:basis-[60%]">
-                  <Card className="group bg-card/30 border-2 border-primary/30 hover:bg-card/50 hover:border-primary/50 transition-smooth shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 overflow-hidden h-full mx-0 md:mx-0">
+                <CarouselItem key={index} className="px-4 md:pl-2 basis-[90%] sm:basis-[85%] md:basis-[70%] lg:basis-[60%] mx-0">
+                  {/* Mobile-only thumbnail that links to GitHub */}
+                  <div className="md:hidden w-full h-full">
+                    <a 
+                      href={project.github || project.live || '#'} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block w-full"
+                    >
+                      <div className="relative overflow-hidden bg-muted/20 rounded-xl mx-auto" style={{ aspectRatio: '16/10', maxWidth: 'calc(100% - 8px)' }}>
+                        <img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            target.parentElement!.innerHTML = `
+                              <div class="absolute inset-0 flex items-center justify-center bg-gradient-primary">
+                                <div class="text-center p-4">
+                                  <span class="text-white text-lg font-semibold">${project.title}</span>
+                                  <p class="text-sm text-white/80 mt-1">Tap to view project</p>
+                                </div>
+                              </div>
+                            `;
+                          }}
+                        />
+                      </div>
+                    </a>
+                  </div>
+
+                  {/* Desktop card - unchanged */}
+                  <Card className="hidden md:block group bg-card/30 border-2 border-primary/30 hover:bg-card/50 hover:border-primary/50 transition-smooth shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 overflow-hidden h-full mx-0">
                     <div className="aspect-video relative overflow-hidden bg-muted/20 md:aspect-video" style={{ aspectRatio: '16/10' }}>
                       <img 
                         src={project.image} 
@@ -169,8 +203,8 @@ const Projects = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-1 md:left-4 h-12 w-12 md:h-12 md:w-12 bg-card/90 border-2 border-primary/40 hover:bg-primary/20 hover:border-primary/60 hover:scale-110 transition-all duration-200 shadow-lg shadow-primary/10 hover:shadow-primary/20 z-20 rounded-full" />
-            <CarouselNext className="right-1 md:right-4 h-12 w-12 md:h-12 md:w-12 bg-card/90 border-2 border-primary/40 hover:bg-primary/20 hover:border-primary/60 hover:scale-110 transition-all duration-200 shadow-lg shadow-primary/10 hover:shadow-primary/20 z-20 rounded-full" />
+            <CarouselPrevious className="hidden md:flex left-4 h-12 w-12 bg-card/90 border-2 border-primary/40 hover:bg-primary/20 hover:border-primary/60 hover:scale-110 transition-all duration-200 shadow-lg shadow-primary/10 hover:shadow-primary/20 z-20 rounded-full" />
+            <CarouselNext className="hidden md:flex right-4 h-12 w-12 bg-card/90 border-2 border-primary/40 hover:bg-primary/20 hover:border-primary/60 hover:scale-110 transition-all duration-200 shadow-lg shadow-primary/10 hover:shadow-primary/20 z-20 rounded-full" />
           </Carousel>
         </div>
       </div>
