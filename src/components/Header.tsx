@@ -8,7 +8,6 @@ const navigation = [
   { name: "Projects", href: "#projects", icon: Code },
   { name: "Skills", href: "#skills", icon: Code },
   { name: "Education", href: "#education", icon: GraduationCap },
-  { name: "Contact", href: "#contact", icon: Mail },
 ];
 
 const Header = () => {

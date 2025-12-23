@@ -17,7 +17,6 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **Projects**: Showcase of featured work and projects
 - **Skills**: Technical skills and expertise
 - **Education**: Academic background and qualifications
-- **Contact**: Contact information and social links
 
 ## Technology Stack
 

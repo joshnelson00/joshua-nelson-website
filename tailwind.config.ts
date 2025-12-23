@@ -18,7 +18,7 @@ export default {
       'lg': '1024px',
       'xl': '1280px',
       '2xl': '1536px',
-      'header-break': '1080px', // Custom breakpoint for header
+      'header-break': '930px', // Custom breakpoint for header
     },
     extend: {
       fontFamily: {
