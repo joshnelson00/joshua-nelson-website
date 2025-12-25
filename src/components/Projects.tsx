@@ -97,24 +97,29 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="block w-full"
                     >
-                      <div className="relative overflow-hidden bg-muted/20 rounded-xl mx-auto" style={{ aspectRatio: '16/10', maxWidth: 'calc(100% - 8px)' }}>
-                        <img 
-                          src={project.image} 
-                          alt={project.title}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                            target.parentElement!.innerHTML = `
-                              <div class="absolute inset-0 flex items-center justify-center bg-gradient-primary">
-                                <div class="text-center p-4">
-                                  <span class="text-white text-lg font-semibold">${project.title}</span>
-                                  <p class="text-sm text-white/80 mt-1">Tap to view project</p>
+                      <div className="space-y-2">
+                        <div className="relative overflow-hidden bg-muted/20 rounded-xl mx-auto" style={{ aspectRatio: '16/10', maxWidth: 'calc(100% - 8px)' }}>
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              target.parentElement!.innerHTML = `
+                                <div class="absolute inset-0 flex items-center justify-center bg-gradient-primary">
+                                  <div class="text-center p-4">
+                                    <span class="text-white text-lg font-semibold">${project.title}</span>
+                                    <p class="text-sm text-white/80 mt-1">Tap to view project</p>
+                                  </div>
                                 </div>
-                              </div>
-                            `;
-                          }}
-                        />
+                              `;
+                            }}
+                          />
+                        </div>
+                        <h3 className="text-center text-sm font-medium text-white/90 line-clamp-1 px-2">
+                          {project.title}
+                        </h3>
                       </div>
                     </a>
                   </div>
